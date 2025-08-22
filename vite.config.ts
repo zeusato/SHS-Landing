@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/SHS-landing/', // đúng bằng tên repo của đại ca
+  base: '/SHS-Landing/', // đúng bằng tên repo của đại ca
 })
