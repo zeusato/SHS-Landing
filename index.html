@@ -4,9 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHS Landing</title>
+        <!-- Thêm script này để set theme ban đầu -->
+    <script>
+      const ls = localStorage.getItem('theme');
+      const sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (ls === 'dark' || (!ls && sysDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    <script type="module" crossorigin src="/SHS-Landing/assets/index-CHALziK2.js"></script>
+    <link rel="stylesheet" crossorigin href="/SHS-Landing/assets/index-D7wsjO1G.css">
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
