@@ -1,0 +1,159 @@
+/* Gilroy Thin */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Thin Italic.woff2") format("woff2");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gilroy ExtraLight */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Xlight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Xlight Italic.woff2") format("woff2");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gilroy Light */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Light Italic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gilroy Regular */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gilroy Medium */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Medium Italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gilroy SemiBold */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy SemiBold Italic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gilroy Bold */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Bold Italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gilroy ExtraBold */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy XBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy XBold Italic.woff2") format("woff2");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gilroy Black */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Black Italic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gilroy Heavy (có thể coi tương đương 950 hoặc 950–1000) */
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Heavy.woff2") format("woff2");
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/SVN-Gilroy Heavy Italic.woff2") format("woff2");
+  font-weight: 950;
+  font-style: italic;
+  font-display: swap;
+}
