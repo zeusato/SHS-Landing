@@ -95,7 +95,14 @@ Error generating stack: `+s.message+`
           pointer-events-none absolute left-0 top-0 h-full w-2/5\r
           bg-gradient-to-r from-transparent via-white/40 to-transparent\r
           -skew-x-12 blur-md opacity-80\r
-        `})]})}function bw(){return A.useEffect(()=>{const e=t=>{const n=document,r=n.createElement("span");r.className="pointer-events-none fixed rounded-full animate-ripple bg-[radial-gradient(circle,rgba(255,255,255,0.5),rgba(255,255,255,0)_60%)]";const i=Math.max(window.innerWidth,window.innerHeight)*.35;r.style.width=r.style.height=`${i}px`,r.style.left=`${t.clientX-i/2}px`,r.style.top=`${t.clientY-i/2}px`,r.style.zIndex="50",n.body.appendChild(r),r.addEventListener("animationend",()=>r.remove())};return document.addEventListener("click",e),()=>document.removeEventListener("click",e)},[]),null}function Bf({direction:e="down",onClick:t}){return v.jsxs("button",{onClick:t,className:`fixed left-1/2 -translate-x-1/2 bottom-6 z-[600] pointer-events-auto\r
+        `})]})}function bw(){return A.useEffect(()=>{console.log("[GCR] mounted (new)");const e=document.createElement("style");e.innerHTML=`
+      .gcr-ripple { position: fixed; border-radius: 9999px; pointer-events: none; will-change: transform, opacity; }
+      @keyframes gcr-pop  { 0% { transform: scale(0.2); opacity:.55 } 70%{opacity:.25} 100%{ transform: scale(1); opacity:0 } }
+      @keyframes gcr-wave { 0% { transform: scale(0.8); opacity:.35 } 100%{ transform: scale(2.2); opacity:0 } }
+      .gcr-core { background: radial-gradient(circle, rgba(255,255,255,.55), rgba(255,255,255,0) 60%); filter: blur(.5px); animation: gcr-pop 700ms ease-out forwards; }
+      .gcr-ring { border: 1px solid rgba(250,149,40,.55); box-shadow: 0 0 30px rgba(249,130,24,.40); animation: gcr-wave 1100ms ease-out forwards; }
+      .gcr-glow { background: radial-gradient(circle, rgba(250,149,40,.22), rgba(250,149,40,0) 60%); filter: blur(6px); animation: gcr-wave 1200ms ease-out forwards; mix-blend-mode: screen; }
+    `,document.head.appendChild(e);const t=n=>{const r=Math.min(window.innerWidth,window.innerHeight),i=Math.round(Math.max(110,Math.min(r*.22,180))),s=document.createElement("span");s.className="gcr-ripple",s.style.width=s.style.height=`${i}px`,s.style.left=`${n.clientX-i/2}px`,s.style.top=`${n.clientY-i/2}px`,s.style.zIndex="80";const o=document.createElement("span");o.className="gcr-core gcr-ripple",o.style.inset="0";const l=document.createElement("span");l.className="gcr-ring gcr-ripple",l.style.inset="-6px";const a=document.createElement("span");a.className="gcr-glow gcr-ripple",a.style.inset="-12px",s.append(o,l,a),document.body.appendChild(s),window.setTimeout(()=>s.remove(),1250)};return document.addEventListener("click",t,!0),()=>{document.removeEventListener("click",t,!0),e.remove()}},[]),null}function Bf({direction:e="down",onClick:t}){return v.jsxs("button",{onClick:t,className:`fixed left-1/2 -translate-x-1/2 bottom-6 z-[600] pointer-events-auto\r
                  h-14 w-14 rounded-full\r
                  bg-white/15 text-white border border-white/25 shadow-xl\r
                  backdrop-blur-xl hover:bg-white/20\r
