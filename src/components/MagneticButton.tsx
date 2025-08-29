@@ -33,7 +33,7 @@ export default function MagneticButton({ children = "Mở tài khoản" }: { chi
       className="relative overflow-hidden rounded-2xl px-6 py-3 font-semibold text-white
                            backdrop-blur-xl
                            bg-orange-200/10 border border-orange-600/30
-                           hover:bg-orange-200/30 hover:shadow-[0_0_35px_rgba(254,215,170,1)]"
+                           hover:bg-orange-200/30 hover:shadow-[0_0_35px_rgba(255,165,0,1)]"
     >
       <span className="relative z-20">{children}</span>      
       <span

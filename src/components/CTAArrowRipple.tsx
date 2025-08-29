@@ -16,7 +16,7 @@ export default function CTAArrowRipple({
                  bg-white/15 text-white border border-white/25 shadow-xl
                  backdrop-blur-xl hover:bg-white/20
                  flex items-center justify-center transition
-                 overflow-visible"
+                 overflow-visible hover:shadow-[0_0_35px_rgba(255,165,0,1)]"
       aria-label={direction === "down" ? "Xem tiếp" : "Quay về"}
       title={direction === "down" ? "Xem tiếp" : "Quay về"}
     >

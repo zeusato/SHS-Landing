@@ -157,8 +157,9 @@ function LegacyV1() {
                 className="relative overflow-hidden rounded-2xl px-6 py-3 font-semibold text-white
                            backdrop-blur-xl
                            bg-orange-200/10 border border-orange-600/30
-                           hover:bg-orange-200/30 hover:shadow-[0_0_35px_rgba(254,215,170,1)]">
-                <span className="relative z-20">Bắt đầu ngay</span>
+                           hover:bg-orange-200/30 hover:shadow-[0_0_35px_rgba(255,165,0,1)]
+                           transition duration-500 ease-out">
+                <span className="relative z-20">Giao dịch ngay</span>
                 <span className="absolute inset-0 bg-gradient-to-tr from-white/25 via-transparent to-transparent opacity-60 z-0 pointer-events-none" />
                 <span className="absolute inset-0 rounded-2xl ring-1 ring-orange-300/40 pointer-events-none" />
                 <span className="absolute left-0 top-0 h-full w-2/5 bg-gradient-to-r from-transparent via-white/45 to-transparent -skew-x-12 blur-md opacity-80 animate-shine pointer-events-none" />
