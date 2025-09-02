@@ -29,8 +29,6 @@ type RootMenu = { title: string; url?: string | null; sections: Section[] };
 type MegaMenuData = { mains: RootMenu[] };
 type SearchItem = { title: string; url?: string | null; group: string; path: string };
 
-
-
 const HEADER_H = 96; // px (≈ pt-24)
 const items: StackedItem[] = [
   { id: "1", image: Carouse1, header: "Giao dịch Nhanh", content: "Khớp lệnh ổn định, phí cạnh tranh." },
@@ -102,7 +100,7 @@ function LegacyV1() {
   const [showQR, setShowQR] = React.useState(false);
 
   return (
-    <div className="relative min-h-full">
+    <div className="relative h-full">
       {/* blobs & silk */}
       <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full blur-3xl opacity-25 bg-cyan-500" />
       <div className="pointer-events-none absolute -bottom-48 -right-40 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-20 bg-violet-500" />
@@ -331,15 +329,14 @@ export default function SHSNoScrollLanding() {
         <span
           className={[
             "pointer-events-none absolute inset-0",
+            // bỏ rounded để không lộ mép bo
+            // chỉ giữ hairline mỏng nếu muốn
             "border-b border-white/10",
             "bg-white/8 backdrop-blur-md",
-            "shadow-[0_2px_12px_-6px_rgba(0,0,0,0.35)]",
+            "shadow-[0_2px_12px_-6px_rgba(0,0,0,0.35)]",                 // <<< bỏ bóng đổ gây vệt
             "opacity-0 transition",
-            // Desktop: giữ nguyên behavior cũ (hover/mở menu mới hiện)
             "group-hover/header:opacity-100",
             open ? "opacity-100" : "",
-            // Mobile + V1: mặc định hiện nền như đang hover
-            (stage === "v1" ? "opacity-100 md:opacity-0" : "")
           ].join(" ")}
         />
         <div className="relative mx-auto max-w-7xl px-5 py-4 flex items-center gap-5">
@@ -514,20 +511,10 @@ export default function SHSNoScrollLanding() {
            linear-gradient(180deg, #0b1220 0%, #070c16 100%)" }} />
       </motion.div>
 
-      {/* ===== V1 overlay (mobile scrollable, né header bằng pt) ===== */}
+      {/* ===== V1 overlay (no-scroll, né header bằng pt) ===== */}
       <div className={stage === "v1" ? "absolute inset-0 z-[400]" : "hidden"}>
-        <div
-          className="
-            absolute inset-0
-            pt-24 sm:pt-28
-            /* Mobile: có scroll; Desktop+: tắt scroll */
-            h-[100dvh] overflow-y-auto overscroll-contain
-            [overscroll-behavior:y:contain] [-webkit-overflow-scrolling:touch]
-            md:h-full md:overflow-hidden md:overscroll-auto
-          ">
+        <div className="absolute inset-0 overflow-hidden pt-24 sm:pt-28">
           <LegacyV1 />
-          {/* spacing đáy để tránh kẹt UI cuối màn khi có thanh điều hướng mobile */}
-          <div className="h-8 sm:h-10 md:hidden" />
         </div>
       </div>
 

@@ -1,32 +1,30 @@
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  // Mặc định DARK nếu chưa có gì trong localStorage
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("theme");
-      if (stored === "dark" || stored === "light") return stored === "dark";
-      // lần đầu: default dark
-      return true;
-    }
-    return true;
-  });
+  // Khởi tạo state isDark: nếu html có class "dark" thì true
+  const [isDark, setIsDark] = useState<boolean>(() =>
+    typeof document !== "undefined"
+      ? document.documentElement.classList.contains("dark")
+      : false
+  );
 
-  // Đồng bộ <html class="dark"> + localStorage mỗi lần đổi
+  // Mỗi lần state isDark thay đổi thì cập nhật lại <html> và localStorage
   useEffect(() => {
     const root = document.documentElement;
+    console.log("isDark changed:", isDark);
     if (isDark) {
       root.classList.add("dark");
-      localStorage.setItem("theme", "dark");
+      console.log("=> add class dark");
     } else {
       root.classList.remove("dark");
-      localStorage.setItem("theme", "light");
+      console.log("=> remove class dark");
     }
   }, [isDark]);
 
+  // Nút toggle hiển thị khác nhau tùy theo isDark
   return (
     <button
-      onClick={() => setIsDark(v => !v)}
+      onClick={() => setIsDark((v) => !v)}
       aria-label="Toggle theme"
       className="rounded-xl px-3 py-2 text-sm font-medium
                  bg-white/70 text-slate-900 border border-slate-200 shadow
