@@ -168,11 +168,25 @@ function LegacyV1() {
               </button>
             </a>
 
+            {/* Mobile: mở link trực tiếp */}
+            <a
+              href="https://qr.me-qr.com/KIuncOL4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:hidden relative overflow-hidden rounded-2xl px-6 py-3 font-semibold 
+                         text-white bg-white/10 border border-white/20
+                         hover:bg-white/15 hover:shadow-[0_0_35px_rgba(56,189,248,0.7)]
+                         transition duration-500 ease-out"
+            >
+              Tải ứng dụng
+            </a>
+
+            {/* Desktop: toggle QR panel */}
             <button
               onClick={() => setShowQR((v) => !v)}
               aria-expanded={showQR}
               aria-controls="qr-panel"
-              className="relative overflow-hidden rounded-2xl px-6 py-3 font-semibold 
+              className="hidden md:block relative overflow-hidden rounded-2xl px-6 py-3 font-semibold 
                          text-white bg-white/10 border border-white/20
                          hover:bg-white/15 hover:shadow-[0_0_35px_rgba(56,189,248,0.7)]
                          transition duration-500 ease-out">
