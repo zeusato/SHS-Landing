@@ -17,6 +17,7 @@ import MagneticButton from "./components/MagneticButton";
 import GlobalClickRipple from "./components/GlobalClickRipple";
 import CTAArrowRipple from "./components/CTAArrowRipple"
 import StackedCarouselFit, { StackedItem } from "./components/StackedCarouselFit";
+import ContactFAB from "./components/ContactFAB";
 
 
 /* ===== Mega menu data (giữ nguyên dữ liệu hiện có) ===== */
@@ -500,7 +501,7 @@ export default function SHSNoScrollLanding() {
         </div>
 
         {/* BG mode dock */}
-        <div className="fixed right-3 sm:top-1/2 sm:-translate-y-1/2 bottom-3 sm:bottom-auto z-30 pointer-events-auto">
+        <div className="fixed right-3 sm:top-1/2 sm:-translate-y-1/2 bottom-3 bottom-[calc(3.5rem+4.5rem)] sm:bottom-auto z-30 pointer-events-auto">
           <div className="flex flex-col items-center gap-2 p-2 rounded-2xl border border-white/12 bg-white/10 backdrop-blur-md shadow-lg">
             {[
               //{ key: "brand" as const, label: "B", title: "Brand" }, - tạm thời bỏ
@@ -544,7 +545,7 @@ export default function SHSNoScrollLanding() {
           <div className="h-8 sm:h-10 md:hidden" />
         </div>
       </div>
-
+      <ContactFAB />
       {/* ===== Footer ===== */}
       <footer className="absolute bottom-3 left-0 right-0 z-[150] text-white/80">
         <div className="mx-auto max-w-7xl px-5 flex items-center justify-between text-xs">
