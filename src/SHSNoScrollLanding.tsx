@@ -533,7 +533,7 @@ export default function SHSNoScrollLanding() {
       </motion.div>
 
       {/* ===== V1 overlay (mobile scrollable, né header bằng pt) ===== */}
-      <div className={stage === "v1" ? "absolute inset-0 z-[400]" : "hidden"}>
+      <div className={stage === "v1" ? "absolute inset-0 z-[400] overflow-x-hidden w-full max-w-[100vw]" : "hidden"}>
         <div
           className="
             absolute inset-0
@@ -542,6 +542,7 @@ export default function SHSNoScrollLanding() {
             h-[100dvh] overflow-y-auto overscroll-contain
             [overscroll-behavior:y:contain] [-webkit-overflow-scrolling:touch]
             md:h-full md:overflow-hidden md:overscroll-auto
+            overflow-x-hidden w-full max-w-[100vw]
           ">
           <LegacyV1 />
           {/* spacing đáy để tránh kẹt UI cuối màn khi có thanh điều hướng mobile */}
