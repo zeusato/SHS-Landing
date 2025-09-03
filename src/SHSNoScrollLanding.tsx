@@ -426,7 +426,7 @@ export default function SHSNoScrollLanding() {
         {/* MEGA MENU */}
         {open === "mega" && currentMain && (
           <div className="absolute left-0 right-0 top-[100%] z-40">
-            <div className="mx-auto max-w-7xl px-4 sm:px-5 pt-4 pb-6 rounded-3xl border border-white/12
+            <div className="mx-auto max-w-7xl px-4 sm:px-5 pt-4 pb-6 rounded-3xl border-[0.5px] border-white/5
                             bg-white/[0.08] backdrop-blur-xl shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] transition"
                  onMouseLeave={() => { setOpen(null); setSectionIdx(0); }}>
               <div className="flex items-center justify-between mb-3">
