@@ -36,10 +36,10 @@ type SearchItem = { title: string; url?: string | null; group: string; path: str
 
 const HEADER_H = 96; // px (≈ pt-24)
 const items: StackedItem[] = [
-  { id: "1", image: Carouse1, header: "Giao dịch Nhanh", content: "Khớp lệnh ổn định, phí cạnh tranh." },
-  { id: "2", image: Carouse2, header: "Bảo mật & Tuân thủ", content: "An toàn, tuân thủ quy định." },
-  { id: "3", image: Carouse3, header: "Biểu đồ & Dữ liệu", content: "Realtime, trực quan." },
-  { id: "3", image: Carouse4, header: "Tư vấn đầu tư", content: "Nhiệt tình, chuyên nghiệp" },
+  { id: "1", image: Carouse1, header: "Ưu đãi khách hàng mới", content: "Ưu đãi độc quyền cho khách hàng mới với mức lãi suất hấp dẫn nhất thị trường.", link: "https://www.shs.com.vn/" },
+  { id: "2", image: Carouse2, header: "Sản phẩm Margin TPLUS", content: "Sản phẩm thiết kế riêng cho nhà đầu tư năng động, lướt sóng không lo về lãi.", link: "https://www.shs.com.vn/" },
+  { id: "3", image: Carouse3, header: "Sản phẩm Margin S30", content: "Ưu đãi lãi vay cho khách hàng hiện hữu với mức lãi suất cực kỳ hấp dẫn.", link: "https://www.shs.com.vn/" },
+  { id: "4", image: Carouse4, header: "Chương trình tri ân sin nhật", content: "Chỉ cần phát sinh giao dịch trong thời gian diễn ra chương trình, chắc chắn nhận được quà.", link: "https://www.shs.com.vn/" },
 ];
 
 /* ===== V1 chart ===== */

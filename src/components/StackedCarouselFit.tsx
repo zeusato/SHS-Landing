@@ -13,6 +13,7 @@ export type StackedItem = {
   image?: string;
   header: string;
   content: string;
+  link?: string;
 };
 
 type Props = {
@@ -152,59 +153,78 @@ export default function StackedCarouselFit({
             const off = signedOffset(i);
             if (Math.abs(off) > 2) return null;
 
-            // Tính toán giá trị translateX để đặt tâm thẻ vào đúng vị trí `off * itemSpreadUnit`
+            const isActive = off === 0;                // 👈 thẻ đang ở giữa
             const xTranslation = (off * itemSpreadUnit) - (designCardW / 2);
-            const scaleFace = off === 0 ? 1 : off === -1 || off === 1 ? 0.95 : 0.9;
-            const opacity = off === 0 ? 1 : off === -1 || off === 1 ? 0.9 : 0.72;
-            const z = 100 - Math.abs(off);
-            const y = off === 0 ? 0 : Math.abs(off) * 4;
+            const scaleFace = isActive ? 1 : (off === -1 || off === 1 ? 0.95 : 0.9);
+            const opacity   = isActive ? 1 : (off === -1 || off === 1 ? 0.9  : 0.72);
+            const z         = 100 - Math.abs(off);
+            const y         = isActive ? 0 : Math.abs(off) * 4;
+
+            // phần “ruột” dùng chung cho <a> hoặc <button>
+            const CardInner = (
+              <div className="grid grid-rows-[4fr_1fr]" style={{ height: designCardH }}>
+                <div className="relative overflow-hidden">
+                  {it.image ? (
+                    <img
+                      src={it.image}
+                      alt={it.header}
+                      className="w-full h-full object-contain select-none"
+                      draggable={false}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-cyan-400/35 via-violet-400/35 to-emerald-400/35" />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none" />
+                </div>
+                <div className="px-4 py-3 bg-[#0b1220]/70">
+                  <div className="text-base font-semibold leading-tight tracking-wide line-clamp-1">
+                    {it.header}
+                  </div>
+                  <div className="mt-0.5 text-xs text-white/80 leading-snug line-clamp-2">
+                    {it.content}
+                  </div>
+                </div>
+              </div>
+            );
 
             return (
               <motion.div
                 key={it.id}
                 className="absolute -translate-y-1/2"
-                style={{
-                  x: xTranslation, // Áp dụng giá trị translateX đã tính toán
-                  y,
-                  zIndex: z,
-                  scale: scaleFace,
-                  opacity,
-                  width: designCardW,
-                }}
+                style={{ x: xTranslation, y, zIndex: z, scale: scaleFace, opacity, width: designCardW }}
                 initial={false}
                 animate={{ x: xTranslation, y, scale: scaleFace, opacity }}
                 transition={{ type: "spring", stiffness: 260, damping: 26 }}
               >
-                <button
-                  onClick={() => (off === 0 ? undefined : to(i))}
-                  className="text-left w-full rounded-2xl overflow-hidden border border-white/12 bg-white/8 backdrop-blur-xl text-white shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-white/30"
-                  style={{ pointerEvents: "auto" }}
-                >
-                  <div className="grid grid-rows-[4fr_1fr]" style={{ height: designCardH }}>
-                    <div className="relative overflow-hidden">
-                      {it.image ? (
-                        <img
-                          src={it.image}
-                          alt={it.header}
-                          className="w-full h-full object-contain select-none"
-                          draggable={false}
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-cyan-400/35 via-violet-400/35 to-emerald-400/35" />
-                      )}
-                      <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none" />
-                    </div>
-                    <div className="px-4 py-3 bg-[#0b1220]/70">
-                      <div className="text-base font-semibold leading-tight tracking-wide line-clamp-1">
-                        {it.header}
-                      </div>
-                      <div className="mt-0.5 text-xs text-white/80 leading-snug line-clamp-2">
-                        {it.content}
-                      </div>
-                    </div>
-                  </div>
-                </button>
+                {isActive && it.link ? (
+                  // 👉 CHỈ thẻ active mới là link
+                  <a
+                    href={it.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-left w-full rounded-2xl overflow-hidden border 
+                              border-white/12 bg-white/8 backdrop-blur-xl text-white 
+                              shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] hover:bg-white/10 
+                              transition focus:outline-none focus:ring-2 focus:ring-white/30"
+                    style={{ pointerEvents: "auto" }}
+                  >
+                    {CardInner}
+                  </a>
+                ) : (
+                  // 👉 Thẻ KHÔNG active (dù có link) vẫn là nút để trượt vào giữa
+                  <button
+                    onClick={() => (isActive ? undefined : to(i))}
+                    className="text-left w-full rounded-2xl overflow-hidden border 
+                              border-white/12 bg-white/8 backdrop-blur-xl text-white 
+                              shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] hover:bg-white/10 
+                              transition focus:outline-none focus:ring-2 focus:ring-white/30"
+                    style={{ pointerEvents: "auto" }}
+                    aria-label={isActive ? it.header : `Chuyển đến ${it.header}`}
+                  >
+                    {CardInner}
+                  </button>
+                )}
               </motion.div>
             );
           })}
