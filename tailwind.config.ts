@@ -28,6 +28,9 @@ export default {
         hoverSweep: 'hoverSweep 1.2s ease-out forwards',
         ripple: "ripple 0.8s ease-out",
       },
+      fontFamily: {
+        sans: ["Inter", "Gilroy", "sans-serif"],
+      },
     }
   },
   plugins: [],

@@ -2,6 +2,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TrendingUp, ShieldCheck, Zap, Headphones } from "lucide-react";
 
+
 /* ===== ASSETS (dark only) ===== */
 import logo from "../source/LOGO.png";
 import qrImg from "../source/qr-app.jpg";
@@ -18,6 +19,7 @@ import GlobalClickRipple from "./components/GlobalClickRipple";
 import CTAArrowRipple from "./components/CTAArrowRipple"
 import StackedCarouselFit, { StackedItem } from "./components/StackedCarouselFit";
 import ContactFAB from "./components/ContactFAB";
+import MobileMegaMenu from "./components/MobileMegaMenu";
 
 
 /* ===== Mega menu data (giữ nguyên dữ liệu hiện có) ===== */
@@ -417,6 +419,7 @@ export default function SHSNoScrollLanding() {
             <a href="https://motaikhoan.shs.com.vn/vi/ekyc" target="_blank" rel="noreferrer">
               <MagneticButton />
             </a>
+            <MobileMegaMenu />
           </div>
         </div>
 
@@ -484,18 +487,18 @@ export default function SHSNoScrollLanding() {
             <div className="col-span-1 col-start-1 mb-[10vh] max-w-xl text-left pointer-events-auto">
               <a href="https://www.shs.com.vn/" target="_blank" rel="noreferrer" className="inline-block" aria-label="SHS Website">
                 <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeOut" }}
-                  className="font-gilroy font-bold text-7xl sm:text-8xl lg:text-9xl tracking-tight 
+                  className="font-sans font-bold text-7xl sm:text-8xl lg:text-9xl tracking-tight 
                              bg-clip-text text-transparent drop-shadow-[0_8px_35px_rgba(250,149,40,0.35)]
                              bg-gradient-to-r from-[#FA9528] to-[#F76F08]">
                   SHS
                 </motion.h1>
               </a>
               <motion.p initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut", delay: 0.05 }}
-                className="font-gilroy mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-white whitespace-nowrap drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
+                className="font-sans mt-3 text-2xl sm:text-3xl lg:text-4xl font-semibold text-white whitespace-nowrap drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
                 Kiến tạo tài chính thịnh vượng
               </motion.p>
               <motion.div initial={{ scaleX: 0, opacity: 0 }} animate={{ scaleX: 1, opacity: 1 }} transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-                className="mt-4 h-1 w-32 rounded-full bg-gradient-to-r from-[#FA9528] to-[#F76F08]" />
+                className="mt-4 h-1 w-full rounded-full bg-gradient-to-r from-[#FA9528] to-[#F76F08]" />
             </div>
           </div>
         </div>
@@ -546,6 +549,7 @@ export default function SHSNoScrollLanding() {
         </div>
       </div>
       <ContactFAB />
+
       {/* ===== Footer ===== */}
       <footer className="absolute bottom-3 left-0 right-0 z-[150] text-white/80">
         <div className="mx-auto max-w-7xl px-5 flex items-center justify-between text-xs">
