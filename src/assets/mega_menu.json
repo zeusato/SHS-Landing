@@ -63,11 +63,6 @@
       "url": "https://shs-uat.shs.com.vn/v2//san-pham-dich-vu",
       "sections": [
         {
-          "title": "Văn hóa SHS",
-          "url": "https://shs-uat.shs.com.vn/v2//san-pham-dich-vu",
-          "children": []
-        },
-        {
           "title": "Môi giới chứng khoán",
           "url": "https://shs-uat.shs.com.vn/v2//san-pham-dich-vu/moi-gioi-chung-khoan",
           "children": [
@@ -110,6 +105,11 @@
         {
           "title": "Trung tâm phân tích",
           "url": "https://shs-uat.shs.com.vn/v2//san-pham-dich-vu/trung-tam-phan-tich",
+          "children": []
+        },
+        {
+          "title": "Investment Bank",
+          "url": "https://shs-uat.shs.com.vn/vi/san-pham-dich-vu/investment-bank",
           "children": []
         }
       ]
